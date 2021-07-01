@@ -1,33 +1,31 @@
 import React, {Component} from 'react'
 import axios from "axios";
-import MusicTable from "./components/MusicTable/MusicTable";
-import NavBar from "./components/NavBar/NavBar";
-import SearchBar from "./components/SearchBar/SearchBar";
-import FormComponent from "./components/Form/FormComponent";
+const {Card, validate} = require('../../../FlashCardProject/models/card');
+
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      music: [],
-      filters:""
+      cardInfo: [],
+      descriptions:""
     };
   }
 
   componentDidMount() {
     console.log("Component mounted!");
-    this.fetchMusic();
+    this.fetchCardInfo();
   }
 
   //  test comment
   async fetchCardInfo() {
     try {
-       let response = await axios.get({connectDB()});
+       let response = await axios.get('mongodb+srv://DCarr40:Y8q5tFUzq56ZY9d@cluster0.qms4x.mongodb.net/FlashCardDB?retryWrites=true&w=majority');
         this.setState({
-         music: response.data,
+         cardInfo: response.data,
       });
-      console.log(this.state.music);
+      console.log(this.state.cardInfo);
     } catch (err) {
       console.log(err);
     }
@@ -45,13 +43,10 @@ class App extends Component {
 
 
   render() {
-    let newArrayOfMusic = this.state.music.filter(song => {
+    let newArrayOfAnimes = this.state.animeTitles.filter(anime => {
       return(
       song.title.toLowerCase().includes(this.state.filters.toLowerCase()) ||
-      song.album.toLowerCase().includes(this.state.filters.toLowerCase()) ||
-      song.artist.toLowerCase().includes(this.state.filters.toLowerCase()) ||
-      song.genre.toLowerCase().includes(this.state.filters.toLowerCase()) ||
-      song.releaseDate.toLowerCase().includes(this.state.filters.toLowerCase())
+      song.description.toLowerCase().includes(this.state.filters.toLowerCase()) 
       )
     });
       
