@@ -21,9 +21,9 @@ class App extends Component {
   }
 
   //  test comment
-  async fetchMusic() {
+  async fetchCardInfo() {
     try {
-       let response = await axios.get("http://localhost:5000/api/songs");
+       let response = await axios.get({connectDB()});
         this.setState({
          music: response.data,
       });
