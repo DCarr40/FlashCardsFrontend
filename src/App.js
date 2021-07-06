@@ -1,5 +1,7 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react';
 import axios from "axios";
+import FlashcardList from './components/FlashcardList/FlashcardList';
+import FlashCard from './components/FlashCard/FlashCard';
 
 class App extends Component {
   
@@ -7,13 +9,30 @@ class App extends Component {
     super(props);
     this.state = {
       collection: [],
-      filters:""
+      filters:"",
+
+      Sample_Flashcard: [
+        {id: 1,
+          title:'Sample Card 1',
+         description:'Just a sample'},
+         {id: 2,
+          title:'Sample Card 2',
+         description:'Just a sample'},
+         {id: 3,
+          title:'Sample Card 3',
+         description:'Just a sample'},
+         {id: 4,
+        title:'Sample Card 4',
+         description:'Just a sample'}
+      ]
     };
     
     this.flashcard = [
       {title:'', description:''}
     ]
       ;
+
+
 
   }
 
@@ -36,11 +55,13 @@ class App extends Component {
 
   render() {
    
+    const [flashcard, setFlashCard] = this.setState(this.state.Sample_Flashcard);
     console.log(this.state.collection);
     console.log("Component rendered!");
     return (
       <React.Fragment>
         <div>Hello World</div>
+        <FlashcardList flashcard={flashcard}/>
         {/* <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
