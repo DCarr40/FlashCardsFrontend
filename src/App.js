@@ -40,6 +40,7 @@ class App extends Component {
     console.log("Component rendered!");
     return (
       <React.Fragment>
+        <div>Hello World</div>
         {/* <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
