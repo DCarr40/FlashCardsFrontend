@@ -1,6 +1,5 @@
 import React, {Component, useState} from 'react';
 import axios from "axios";
-import FlashcardList from './components/FlashcardList/FlashcardList';
 import FlashCard from './components/FlashCard/FlashCard';
 
 export default class App extends Component {
