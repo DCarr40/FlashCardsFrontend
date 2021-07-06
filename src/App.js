@@ -11,7 +11,7 @@ export default class App extends Component {
       collection: [],
       filters:"",
     }
-    this.Sample_Flashcard = { [
+    this.Sample_Flashcard =  [
           {
           id: 1,
           title:'Sample Card 1',
@@ -29,7 +29,7 @@ export default class App extends Component {
           title:'Sample Card 4',
           description:'Just a sample'}
         ]
-      }
+      
     };
     
 
