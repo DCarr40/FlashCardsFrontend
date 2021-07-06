@@ -10,11 +10,10 @@ class App extends Component {
       filters:""
     };
     
-    this.flashcard = {
-      title:'',
-      description:''
-
-    };
+    this.flashcard = [
+      {title:'', description:''}
+    ]
+      ;
 
   }
 
@@ -36,8 +35,16 @@ class App extends Component {
   }
 
   render() {
+   
+    console.log(this.state.collection);
+    console.log("Component rendered!");
     return (
-      <div></div>
+      <React.Fragment>
+        {/* <NavBar />
+        <SearchBar handleChange={(event)=>this.handleChange(event)}/>
+        <MusicTable music={newArrayOfMusic} />
+        <FormComponent /> */}
+      </React.Fragment>
     );
   }
 }
