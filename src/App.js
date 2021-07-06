@@ -9,6 +9,13 @@ class App extends Component {
       collection: [],
       filters:""
     };
+    
+    this.flashcard = {
+      title:'',
+      description:''
+
+    };
+
   }
 
   componentDidMount() {
