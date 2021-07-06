@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      music: [],
+      collection: [],
       filters:""
     };
   }
@@ -14,6 +14,18 @@ class App extends Component {
   componentDidMount() {
     console.log("Component mounted!");
     this.fetchCollection();
+  }
+
+  async fetchCollection() {
+    try {
+       let response = await axios.get("http://localhost:5000/api/collections");
+        this.setState({
+         collection: response.data,
+      });
+      console.log(this.state.collection);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {
