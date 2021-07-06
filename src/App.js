@@ -10,8 +10,8 @@ export default class App extends Component {
     this.state = {
       collection: [],
       filters:"",
-    }
-    this.Sample_Flashcard =  [
+    
+  Sample_Flashcard :  [
           {
           id: 1,
           title:'Sample Card 1',
@@ -28,7 +28,7 @@ export default class App extends Component {
           id: 4,
           title:'Sample Card 4',
           description:'Just a sample'}
-        ]
+        ]}
       
     };
     
@@ -52,8 +52,8 @@ export default class App extends Component {
   }
 
   render() {
-   
-    const [flashcard, setFlashCard] = this.setState(this.state.Sample_Flashcard);
+    const defaultFlashCard = this.state.Sample_Flashcard
+    const [flashcard, setFlashCard] = this.setState({defaultFlashCard});
     console.log(this.state.collection);
     console.log("Component rendered!");
     return (
