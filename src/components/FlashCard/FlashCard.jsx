@@ -1,10 +1,10 @@
 import React from 'react'
 import "./FlashCard.css";
 
-export default function FlashCard({flashcard}) {
+export default function FlashCard(props) {
     return (
         <div>
-            {flashcard.title}
+            {/* Just Focus on Creating a Card, then add the data later */}
         </div>
     )
 }

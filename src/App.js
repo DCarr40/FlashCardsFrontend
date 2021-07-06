@@ -32,6 +32,7 @@ export default class App extends Component {
   }
 
   render() {
+    let flashCardCollection = this.state.collection.entries;
    console.log(this.fetchCollection)
     let flashcard = this.state.collection
     console.log(this.state.collection);
@@ -39,7 +40,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <div>Hello World</div>
-        <FlashCard flashcard={FlashCard}/>
+        <FlashCard flashCardCollection ={flashCardCollection}/>
         {/* <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
