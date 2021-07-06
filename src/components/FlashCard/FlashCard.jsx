@@ -1,9 +1,10 @@
 import React from 'react'
+import "./FlashCard.css";
 
-export default function FlashCards({flashcard}) {
+export default function FlashCard({flashcard}) {
     return (
         <div>
-            {flashcard}
+            {flashcard.title}
         </div>
     )
 }

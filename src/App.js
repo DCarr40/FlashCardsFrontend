@@ -3,28 +3,33 @@ import axios from "axios";
 import FlashcardList from './components/FlashcardList/FlashcardList';
 import FlashCard from './components/FlashCard/FlashCard';
 
-class App extends Component {
+export default class App extends Component {
   
   constructor(props) {
     super(props);
     this.state = {
       collection: [],
       filters:"",
-
-      Sample_Flashcard: [
-        {id: 1,
+    }
+    this.Sample_Flashcard = { [
+          {
+          id: 1,
           title:'Sample Card 1',
-         description:'Just a sample'},
-         {id: 2,
+          description:'Just a sample'},
+          {
+          id: 2,
           title:'Sample Card 2',
-         description:'Just a sample'},
-         {id: 3,
+          description:'Just a sample'},
+          {
+          id: 3,
           title:'Sample Card 3',
-         description:'Just a sample'},
-         {id: 4,
-        title:'Sample Card 4',
-         description:'Just a sample'}
-      ]
+          description:'Just a sample'},
+          {
+          id: 4,
+          title:'Sample Card 4',
+          description:'Just a sample'}
+        ]
+      }
     };
     
     this.flashcard = [
@@ -71,4 +76,4 @@ class App extends Component {
   }
 }
 
-export default App;
+
