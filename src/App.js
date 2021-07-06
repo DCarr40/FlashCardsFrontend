@@ -9,29 +9,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       collection: [],
-      filters:"",
-    
-  Sample_Flashcard :  [
-          {
-          id: 1,
-          title:'Sample Card 1',
-          description:'Just a sample'},
-          {
-          id: 2,
-          title:'Sample Card 2',
-          description:'Just a sample'},
-          {
-          id: 3,
-          title:'Sample Card 3',
-          description:'Just a sample'},
-          {
-          id: 4,
-          title:'Sample Card 4',
-          description:'Just a sample'}
-        ]}
-      
     };
-    
+  }
 
 
   componentDidMount() {
@@ -49,17 +28,18 @@ export default class App extends Component {
     } catch (err) {
       console.log(err);
     }
+    
   }
 
   render() {
-    const defaultFlashCard = this.state.Sample_Flashcard
-    const [flashcard, setFlashCard] = this.setState({defaultFlashCard});
+   console.log(this.fetchCollection)
+    let flashcard = this.state.collection
     console.log(this.state.collection);
     console.log("Component rendered!");
     return (
       <React.Fragment>
         <div>Hello World</div>
-        <FlashcardList flashcard={flashcard}/>
+        <FlashCard flashcard={FlashCard}/>
         {/* <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
