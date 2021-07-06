@@ -32,14 +32,7 @@ export default class App extends Component {
       }
     };
     
-    this.flashcard = [
-      {title:'', description:''}
-    ]
-      ;
 
-
-
-  }
 
   componentDidMount() {
     console.log("Component mounted!");
